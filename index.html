@@ -305,32 +305,6 @@ while True:
           圧電ブザーを用いて太鼓の達人の面を作成しました。バチなどで衝撃を与えることでキーボードが入力されます。
         </p>
         <div class="center">
-          <pre class="line-numbers code"><code class="language-Arduino">
-#include "Stepper.h"
-
-  const int Steps = 200;
-  const int DIR = 14;
-  const int STEP = 12;
-
-  float rpm = 10;
-  int microsteps = 30;
-  Stepper stepper(Steps, DIR, STEP);
-
-void setup() {
-  stepper.setSpeed(30); 
-}
-
-void loop() {
-} 
-          </pre></code>
-        </div>
-        <div class="center">
-          <img src="images/ESP32-1.PNG" alt="ステッピングモーターの画像" class="pr-image">
-        </div>
-        <p class="fourth-text text">
-          これはESP32でステッピングモーターを回している様子です。A4988ドライバーを用いて回すことができました。
-        </p>
-        <div class="center">
           <pre class="line-numbers code"><code class="language-python">
 from asyncio.windows_events import INFINITE
 
