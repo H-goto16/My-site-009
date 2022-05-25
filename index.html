@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <script src="JS/pace.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Portfolio</title>
+  </head>
+  <!-- ソースコードをご覧いただきありがとうございます。こちらのウェブサイトではpace.jsによるページローダー。perticle.jsによる背景の桜。prism.jsによるソースコードのシンタックスハイライト。jQuery,jQuery.inview.jsによるinviewイベント。Sassを用いることでindex.htmlのlinkタグ内の記述量削減などをしています。ポートフォリオはなるべくシンプルかつ見やすくて分かりやすいサイトを意識して作成しました。拙いソースコード、ウェブサイトではありますが見ていただけると幸いです。 -->
+  <body id="box">
+    <div id="global-container">
+      <div id="particles-js"></div>
+      <div id="wrapper">
+        <div class="title-box">
+          <h1 class="title typ">Welcome to my Portfolio!</h1>
+        </div>
+      </div>
+      <div class="sub-title">
+        <h3 class="text">こんにちは！</h3>
+        <p class="introduce">
+          今回は私のポートフォリオサイトをご閲いただきありがとうございます。早速ですが自己紹介をさせて頂きます。
+        </p>
+      </div>
+      <div class="introduce-box">
+        <p class="introduce-title">プログラミングを始めたきっかけ</p>
+        <p class="text">
+          小学校の高学年の時、ゲームを作っているのがコンピュータなら自分もゲームを作ることができるのではと思いはじめたのがきっかけでした。その時に、HTMLとJavaScriptを書いたりしていました。高校３年生になってからプログラミングにもう一度興味が再燃しました。
+        </p>
+      </div>
+      <div class="introduce-box">
+      </div>
+      <div class="skill">
+        <div class="graph">
+          <p class="skill-title">スキル</p>
+          <div class="bar bar1">HTML5 70%</div>
+          <div class="bar bar2">Sass 60%</div>
+          <div class="bar bar3">Python 40%</div>
+          <div class="bar bar4">Arduino 30%</div>
+          <div class="bar bar5">JavaScript / jQuery 20%</div>
+          <div class="bar bar6">PHP 15%</div>
+          <div class="bar bar7">React Native 10%</div>
+        </div>
+        <p class="otherskill">
+          エディタ:Visual Studio Code<br>OS:Windows / Ubuntu
+        </p>
+        <p class="introduce-text">その他</p>
+        <p class="text">
+          空手二段 水泳 ドラム 吹奏楽 楽器
+        </p>
+      </div>
+      <div class="goal">
+        <p class="goal-title">目標</h2>
+          <p class="contents">大きな目標はPythonをマスターして、Pythonを仕事にしたいです。また、Pythonでこれからはいろいろなライブラリを使いこなせるようになりたいです。
+            小さな目標はArduino言語においてCMAC AESの暗号化技術を学ぶこと、またPythonで音声ファイルからの文字起こしにチャレンジしたいです。
+            Pythonを使うサークルに入ったので、これからはますますPythonの知識を深めれてたらと思います。
+          </p>
+      </div>
+      <div class="production">
+        <p class="production-title">成果物</p>
+        <div class="center">
+          <iframe
+          class="beautiful-ocean"
+          src="https://flamboyant-brahmagupta-5a0c09.netlify.app/"
+          frameborder="0"
+          ></iframe>
+        </div>
+        <a class="link-text" href="https://flamboyant-brahmagupta-5a0c09.netlify.app/">Beautiful Ocean</a>
+        <p class="p-first-text text">
+          これがはじめて作ったウェブサイトです。Bootstrapを用いてレスポンシブにチャレンジしてみました。また、jQueryを用いて表示されたタイミングで発火させるinviewをとりいれました。
+        </p>
+        <div class="center">
+          <iframe
+          class="Délicieuxse-Viande"
+          src="https://elastic-pare-348fba.netlify.app/"
+          frameborder="0"
+          ></iframe>
+        </div>
+        <a class="link-text" href="https://elastic-pare-348fba.netlify.app/">Délicieuxse Viande</a>
+        <p class="p-seconod-text text">
+          次に作ったサイトがこちらになります。前回のよりはフレームワークを使うことを減らせましたが、モバイル表示にしたときにスライダーがBootstrapだとすぐにわかってしまうレイアウトでした。
+        </p>
+        <div class="center">
+          <iframe
+          class="BTO-Customizer"
+            src="https://elastic-bhaskara-994f0b.netlify.app/"
+            frameborder="0"
+            ></iframe>
+          </div>
+          <a class="link-text" href="https://elastic-bhaskara-994f0b.netlify.app/">BTO Customizer</a>
+          <p class="p-third-text text">
+            その次に、フレームワークにはあまり頼らずにウェブサイトを作ってみました。ハンバーガーメニューを×にするように変更したり色々工夫を加えました。しかし、モバイルファーストなサイトにならなかったのが大きな課題でした。次回はモバイルファーストを意識して作っていきたいと思っています。
+          </p>
+          <div class="center">
+            <pre class="line-numbers code"><code class="language-python">
+import json
+import requests
+import time
+
+header = {"Authorization": "TOKEN"}
+response = requests.get("https://api.switch-bot.com/v1.0/devices", headers=header)
+
+if str(response) == '&lt;Response [200]&gt;':
+device_list = json.loads(response.text)
+
+hub_mini = device_list["body"]["deviceList"][0]
+hub_mini_Id = hub_mini["deviceId"]
+
+air_conditioner = device_list["body"]["infraredRemoteList"][0]
+air_conditioner_id = air_conditioner["deviceId"]
+
+light = device_list["body"]["infraredRemoteList"][1]
+light_id = light["deviceId"]
+
+id_list = [hub_mini_Id, air_conditioner_id, light_id]
+else:
+print('It could not work.Please check Authorization or import.')
+
+# ----------Command list-------------
+
+on_command = {
+  "command":"turnOn",
+  "parameter":"default",
+  "commandType":"command"
+}
+off_command = {
+  "command":"turnOff",
+  "parameter":"default",
+  "commandType":"command"
+}
+temp_up_command = {
+  "command":"setAll",
+  "parameter":"default",
+  "commandType":"26,5,1,on"
+}
+light_up_command = {
+  "command":"brightnessUp",
+  "parameter":"default",
+  "commandType":"command"
+}
+light_down_command = {
+  "command":"brightnessDown",
+  "parameter":"default",
+  "commandType":"command"
+}
+nightlight_command = {
+  "command":"brightnessDown",
+  "parameter":"default",
+  "commandType":"command"
+}
+
+#------------ Change the above command to json.----------
+
+on = json.dumps(on_command)
+off = json.dumps(off_command)
+light_up = json.dumps(light_up_command)
+light_down = json.dumps(light_down_command)
+
+#-------------- Define oparating-----------
+
+def operation(id ,parameter):
+  url = 'https://api.switch-bot.com/v1.0/devices/'+ id_list[id] +'/commands'
+  post_api = requests.post(url, headers=header, data=parameter)
+  print(post_api)
+
+def repetition(id ,parameter, times, sleep):
+  for i in range (times):
+    url = 'https://api.switch-bot.com/v1.0/devices/'+ id_list[id] +'/commands'
+    post_api = requests.post(url, headers=header, data=parameter)
+    time.sleep(sleep)
+    print(post_api)
+
+def device_off():
+  for j in range(len(id_list)):
+    url = 'https://api.switch-bot.com/v1.0/devices/'+ id_list[j] +'/commands'
+    print(url)
+
+  post_api = requests.post(url, headers=header, data=off)
+  print(post_api)
+
+def device_on():
+  for k in range(len(id_list)):
+    url = 'https://api.switch-bot.com/v1.0/devices/'+ id_list[k] +'/commands'
+    print(url)
+  
+    post_api = requests.post(url, headers=header, data=on)
+    print(post_api)
+# operation(1,on)
+# repetition(2,on,3,3)
+# device_off()
+    </code></pre>
+  </div>
+        <p class="fourth-text text">
+          これはPythonを使ってSwitchBotを操作したプログラムです。APIを利用してパソコンからでも操作ができるようになりました。
+        </p>
+        <div class="center">
+          <img src="images/ESP32-2.PNG" alt="Lチカの画像" class="pr-image">
+        </div>
+        <p class="fourth-text text">
+          これはESP32でLチカをしている様子です。
+        </p>
+        <div class="center">
+          <pre class="line-numbers code"><code class="language-Arduino">
+#include "Stepper.h"
+
+  const int Steps = 200;
+  const int DIR = 14;
+  const int STEP = 12;
+
+  float rpm = 10;
+  int microsteps = 30;
+  Stepper stepper(Steps, DIR, STEP);
+
+void setup() {
+  stepper.setSpeed(30); 
+}
+
+void loop() {
+} 
+          </pre></code>
+        </div>
+        <div class="center">
+          <img src="images/ESP32-1.PNG" alt="ステッピングモーターの画像" class="pr-image">
+        </div>
+        <p class="fourth-text text">
+          これはESP32でステッピングモーターを回している様子です。A4988ドライバーを用いて回すことができました。
+        </p>
+        <div class="center">
+          <pre class="line-numbers code"><code class="language-python">
+from machine import ADC, Pin
+import machine
+import utime
+
+soil = ADC(Pin(26))
+
+min_moisture=0
+max_moisture=65535
+relay_setup = machine.Pin(14, machine.Pin.OUT)
+readDelay = 0.5
+while True:
+    moisture = (max_moisture-soil.read_u16())*100/(max_moisture-min_moisture)
+    print(moisture)
+    if moisture < 70:
+        print("Dirty!")
+        relay_setup.value(1)
+        utime.sleep(2)
+        print(moisture)
+    utime.sleep(readDelay)
+    relay_setup.value(0)
+          </code></pre>
+        </div>
+        <div class="center">
+          <img src="images/auto.jpg" alt="自動水やり機の画像" class="pr-image">
+        </div>
+        <p class="fourth-text text">
+          Raspberry Pi Picoと土壌水分センサー、ポンプとリレーモジュールを用いることで土の水分濃度が低下すると自動で水やりをしてくれる自動水やり機を作成しました。
+        </p>
+        <div class="center">
+          <pre class="line-numbers code"><code class="language-python">
+import time
+import board
+import digitalio
+import usb_hid
+from adafruit_hid.keyboard import Keyboard
+from adafruit_hid.keycode import Keycode
+
+def keyInput(keycodeName):
+    keyboard.send(keycodeName)
+
+keyboard = Keyboard(usb_hid.devices)
+
+led = digitalio.DigitalInOut(board.GP25)
+led.direction = digitalio.Direction.OUTPUT
+fbutton = digitalio.DigitalInOut(board.GP13)
+fbutton.switch_to_input(pull=digitalio.Pull.DOWN)
+dbutton = digitalio.DigitalInOut(board.GP12)
+dbutton.switch_to_input(pull=digitalio.Pull.DOWN)
+jbutton = digitalio.DigitalInOut(board.GP11)
+jbutton.switch_to_input(pull=digitalio.Pull.DOWN)
+kbutton = digitalio.DigitalInOut(board.GP10)
+kbutton.switch_to_input(pull=digitalio.Pull.DOWN)
+led.value = False
+
+while True:
+    if fbutton.value:
+        led.value = True
+        keyInput(Keycode.F)
+        led.value = False
+    elif dbutton.value:
+        led.value = True
+        keyInput(Keycode.D)
+        led.value = False
+    elif jbutton.value:
+        led.value = True
+        keyInput(Keycode.J)
+        led.value = False
+    elif kbutton.value:
+        led.value = True
+        keyInput(Keycode.K)
+        led.value = False
+                    
+          </code></pre>
+        </div>
+        <p class="fourth-text text">
+          圧電ブザーを用いて太鼓の達人の面を作成しました。バチなどで衝撃を与えることでキーボードが入力されます。
+        </p>
+        <div class="center">
+          <pre class="line-numbers code"><code class="language-Arduino">
+#include "Stepper.h"
+
+  const int Steps = 200;
+  const int DIR = 14;
+  const int STEP = 12;
+
+  float rpm = 10;
+  int microsteps = 30;
+  Stepper stepper(Steps, DIR, STEP);
+
+void setup() {
+  stepper.setSpeed(30); 
+}
+
+void loop() {
+} 
+          </pre></code>
+        </div>
+        <div class="center">
+          <img src="images/ESP32-1.PNG" alt="ステッピングモーターの画像" class="pr-image">
+        </div>
+        <p class="fourth-text text">
+          これはESP32でステッピングモーターを回している様子です。A4988ドライバーを用いて回すことができました。
+        </p>
+        <div class="center">
+          <pre class="line-numbers code"><code class="language-python">
+from asyncio.windows_events import INFINITE
+
+n = 1
+sum = 0
+
+def Leibniz(n):
+    return 4*(( -1 ) ** n / ( 2*n + 1 ))
+time = input("試行回数を入力")
+
+for i in range(0,int(time)):
+    sum += Leibniz(i)
+print('{:.30f}'.format(sum))  
+
+input("input some key")
+          </code></pre>
+        </div>
+        <p class="fourth-text text">
+          円周率を級数によって近似計算してみました。試行回数を多くすればするほど精度が上がっていきます。
+        </p>
+        <p class="fourth-text text">
+          その他はGitHubで保管しております。是非ご覧ください。
+        </p>
+      </div>
+      <div class="contact">
+        <p class="contact-title">リンク</p>
+        <a href="https://github.com/H-goto16" class="link fst">GitHub</a>
+        <a href="mailto:h.goto.engineer@gmail.com" class="link secd">Mail</a>
+        <a href="tel:08024447085" class="link lst">TEL</a>
+      </div>
+      <div class="career">
+        <p class="career-title">経歴</p>
+        <p class="career-first text">関西大倉高等学校 卒業</p>
+        <p class="career-second text">
+          立命館大学 理工学部 電子情報工学科 入学
+        </p>
+      </div>
+      <div class="space">
+        &nbsp;
+      </div>
+      <div class="reload">
+        <p class="date">最終更新日:2022年5月24日</p>
+      </div>
+    </div>
+    <script src="JS/jQuery.js"></script>
+    <script src="JS/particle.js"></script>
+    <script src="JS/jquery.inview.min.js"></script>
+    <script src="JS/prism.js"></script>
+    <script src="JS/main.js"></script>
+  </body>
+  </html>
+  
